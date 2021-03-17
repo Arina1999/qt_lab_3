@@ -6,11 +6,16 @@ CONFIG -= app_bundle
 SOURCES += \
     FileStrategy.cpp \
     FolderStrategy.cpp \
-        main.cpp \
+    main.cpp \
+    mainwindow.cpp
 
-HEADERS += \ \
+HEADERS += \
     AbstractStrategy.h \
     FileStrategy.h \
-    FolderStrategy.h
+    FolderStrategy.h \
+    mainwindow.h
 
-DEFINES += DIR=\\\"$$PWD\\\"
+#DEFINES += DIR=\\\"$$PWD\\\"
+
+FORMS += \
+    mainwindow.ui
