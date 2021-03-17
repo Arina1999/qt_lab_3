@@ -13,6 +13,11 @@ void CustomFileModel::setStatisticsStrategy(const QSharedPointer<AbstractStrateg
     UpdateStatistics(path_);
 }
 
+QSharedPointer<AbstractStrategy> CustomFileModel::currentStrategy() const
+{
+    return strategy_;
+}
+
 void CustomFileModel::UpdateStatistics(const QString &path)
 {
     path_ = path;
@@ -51,7 +56,7 @@ QVariant CustomFileModel::data(const QModelIndex &index, int role) const
 {
     if (index.isValid() && role == Qt::DisplayRole) {
         if (index.column() == 0) {
-            return QFileInfo(stats_.keys()[index.row()]).completeBaseName();
+            return QFileInfo(stats_.keys()[index.row()]).fileName();
         }
 
         if (index.column() == 1) {

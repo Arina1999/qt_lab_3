@@ -13,6 +13,8 @@ public:
 
     void setStatisticsStrategy(const QSharedPointer<AbstractStrategy> &strategy);
 
+    QSharedPointer<AbstractStrategy> currentStrategy() const;
+
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;

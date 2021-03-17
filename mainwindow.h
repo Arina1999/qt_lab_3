@@ -3,6 +3,14 @@
 
 #include <QMainWindow>
 
+#include "StatsUpdater.h"
+
+namespace QtCharts {
+class QChartView;
+class QChart;
+class QValueAxis;
+}
+
 namespace Ui {
 class MainWindow;
 }
@@ -26,12 +34,23 @@ private slots:
 
     void on_radioButton_2_clicked(bool checked);
 
+    void on_comboBox_currentIndexChanged(int index);
+
+private:
+    void updateStats();
+
 private:
     Ui::MainWindow *ui;
     QSharedPointer<AbstractStrategy> strat1;
     QSharedPointer<AbstractStrategy> strat2;
     QFileSystemModel *treeModel;
     CustomFileModel* customModel;
+
+    QSharedPointer<QtCharts::QChart> chart;
+    QSharedPointer<QtCharts::QValueAxis> axisY;
+    QtCharts::QChartView *chartView;
+
+    std::vector<StatsUpdater> updaters;
 };
 
 #endif // MAINWINDOW_H
