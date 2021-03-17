@@ -5,7 +5,7 @@
 #include <QVector>
 #include <QHash>
 
-class FileStrategy : public AbsrtractStrategy
+class FileStrategy : public AbstractStrategy
 {
 public:
     void CalcStatistics(const QString& path) override;
