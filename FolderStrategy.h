@@ -4,7 +4,7 @@
 #include "AbstractStrategy.h"
 #include <QHash>
 
-class FolderStrategy : public AbsrtractStrategy
+class FolderStrategy : public AbstractStrategy
 {
 public:
     void CalcStatistics(const QString& path);

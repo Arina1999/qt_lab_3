@@ -2,21 +2,21 @@
 #define ABSTRACTSTRATEGY_H
 
 #include <QString>
-#include <QHash>
+#include <QMap>
 
-class AbsrtractStrategy
+class AbstractStrategy
 {
 public:
-    virtual ~AbsrtractStrategy(){}
+    virtual ~AbstractStrategy(){}
 
     virtual void CalcStatistics(const QString& path) = 0;
 
-    QHash<QString, double> GetStats() const  {
+    QMap<QString, double> GetStats() const  {
         return stats_;
     }
 
 protected:
-    QHash<QString, double> stats_;
+    QMap<QString, double> stats_;
 };
 
 
